@@ -1,10 +1,11 @@
 import Week from "./Week";
 
-const Month = () => (
+const Month = () => {
+  return (
   <div>
-    Month <Week />
+    <Week />
   </div>
-);
+)};
 
 
 export default Month;
