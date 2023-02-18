@@ -1,7 +1,13 @@
-import Header from './components/Header';
+import Header from "./components/Header";
+import Calendar from "./components/Calendar/Calendar";
+
+import './App.css';
 
 const App = () => (
-  <Header />
+  <div style={{ 'display': 'flex', 'alignItems': 'center', 'flexDirection': 'column'}}>
+    <Header />
+    <Calendar />
+  </div>
 );
 
 export default App;
