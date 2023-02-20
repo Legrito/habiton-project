@@ -7,7 +7,7 @@ interface Props {
   weekDays?: string[]
 }
 
-const Week = ({ weekDays = arr}: Props) => {
+const Week = ({ weekDays = arr }: Props) => {
   return (
   <div className={styles.wrap}>
     {weekDays.map(day => (<Day name={day} />))}
