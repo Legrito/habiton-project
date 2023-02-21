@@ -1,5 +1,5 @@
 interface Props {
-  name: string,
+  name: number | undefined,
 }
 
 const Day = ({name}: Props) => {
