@@ -1,9 +1,10 @@
-// import './01-primitives';
-// import './02-arrays';
-// import './03-types';
-// import './04-interfaces';
-// import './05-enums';
-// import './06-functions';
-// import './07-classes';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-export {};
+ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
