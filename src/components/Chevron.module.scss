@@ -1,0 +1,27 @@
+@import '../variables.scss';
+
+$border: 3px solid $accent-color;
+
+.chevron {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $primary-color;
+    transition: all .15s ease-in-out;
+  }
+}
+
+.right {
+  border-top: $border;
+  border-right: $border;
+  transform: rotate(45deg);
+}
+
+.left {
+  border-top: $border;
+  border-left: $border;
+  transform: rotate(-45deg);
+}

@@ -1,18 +1,17 @@
 import moment, { Moment } from "moment";
 import Month from "./Month";
-import Week from "./Week";
+import Weekdays from "./Weekdays";
 
 const weekDays: number[] = [0, 1, 2, 3, 4, 5, 6];
 
 const Calendar = () => {
-  const date = moment().month('March');
-  //const weekdays = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
-
-
+  var oneDate = moment();
+  var monthName = oneDate.format("MMMM");
+  const date = moment().month("March");
 
   return (
     <div>
-      {/* <Week weekDays={weekdays} /> */}
+      <Weekdays />
       <Month date={date} />
     </div>
   );

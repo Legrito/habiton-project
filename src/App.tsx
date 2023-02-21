@@ -1,10 +1,10 @@
 import Header from "./components/Header";
 import Calendar from "./components/Calendar/Calendar";
 
-import './App.css';
+import './App.scss';
 
 const App = () => (
-  <div style={{ 'display': 'flex', 'alignItems': 'center', 'flexDirection': 'column'}}>
+  <div className="container">
     <Header />
     <Calendar />
   </div>

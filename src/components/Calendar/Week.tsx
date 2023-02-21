@@ -10,11 +10,7 @@ interface Props {
 const Week = ({ weekDays }: Props) => {
   return (
   <div className={styles.wrap}>
-    {weekDays.map(day => {
-      if( day === null) {
-        return null;
-      }
-    return <Day name={day?.date()} />})}
+    {weekDays.map(day => <Day day={day} />)}
   </div>
 )};
 

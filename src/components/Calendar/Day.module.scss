@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+.day {
+  width: 45px;
+  height: 45px;
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:not(:last-child) {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  &:not(.day--empty) {
+    &:hover {
+      background-color: $secondary-color;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+    }
+  }
+}
+
+.day--empty {
+  display: inline-block;
+  opacity: 0;
+  border: none;
+}
