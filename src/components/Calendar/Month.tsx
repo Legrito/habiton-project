@@ -9,15 +9,6 @@ interface Props {
 
 const Month = ({ date }: Props) => {
   const monthDays = getDaysArrayByMonth("March");
-  // const getNumberOfWeeksInMonth = (currentDate: moment.Moment): number => {
-  //   const startWeek = currentDate.startOf("month").isoWeek();
-  //   const endWeek = currentDate.endOf("month").isoWeek();
-  //   return endWeek - startWeek + 1;
-  // };
-
-  // const weeksAmount: number[] = new Array(
-  //   getNumberOfWeeksInMonth(date)
-  // ).fill(5, 0);
 
   return (
     <div>
