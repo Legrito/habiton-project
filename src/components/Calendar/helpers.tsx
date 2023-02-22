@@ -6,14 +6,15 @@ export const getNumberOfWeeksInMonth = (date: moment.Moment): number => {
   return endWeek - startWeek + 1;
 };
 
-export const getMonthDays = (month: number): Moment[] => {
+export const getMonthDays = (month: string): Moment[] => {
   const currentMonthDates = new Array(moment().month(month).daysInMonth()).fill(null).map((x, i) => moment().month(month).startOf('month').add(i, 'days'));
 
   return currentMonthDates;
 };
 
-export const getNormalizedMonthDaysList = (currentDate: Moment): (Moment | null)[] => {
-  const monthDays: (Moment | null)[] = [...getMonthDays(2)];
+export const getNormalizedMonthDaysList = (currentMonth: string): (Moment | null)[] => {
+  const monthDays: (Moment | null)[] = [...getMonthDays(currentMonth)];
+  const currentDate = moment().month(currentMonth);
   const startWeek = currentDate.startOf("month").isoWeekday();
   const endWeek = currentDate.endOf("month").isoWeekday();
   const startMonth: null[] = new Array(startWeek - 1).fill(null);
@@ -32,7 +33,7 @@ export const getNormalizedMonthDaysList = (currentDate: Moment): (Moment | null)
 };
 
 export const getDaysArrayByMonth = (month: string) => {
-  let currentDate = moment().month(month);
+  let currentDate = month ? moment().month(month).format('MMMM') : moment().format('MMMM');
   let arrDays: (Moment | null)[][] = [];
   let week: (Moment | null)[] = [];
   const normalizedDays = getNormalizedMonthDaysList(currentDate);

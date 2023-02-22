@@ -11,7 +11,7 @@ interface Props {
 const Week = ({ weekDays }: Props) => {
   return (
   <div className={styles.wrap}>
-    {weekDays.map(day => <Day day={day} />)}
+    {weekDays.map((day, idx) => <Day key={idx} day={day} />)}
   </div>
 )};
 

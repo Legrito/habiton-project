@@ -6,10 +6,10 @@ import { getDaysArrayByMonth } from './helpers';
 const weekDays: number[] = [0, 1, 2, 3, 4, 5, 6];
 
 const Calendar = () => {
-  var oneDate = moment();
+  const currentDate = moment();
   // var monthName = oneDate.format("MMMM");
   // const date = moment().month("March");
-  const monthDays = getDaysArrayByMonth("March");
+  const monthDays = getDaysArrayByMonth(currentDate.format('MMMM'));
 
   return (
     <div>
