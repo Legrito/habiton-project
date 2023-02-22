@@ -1,8 +1,8 @@
-import moment from "moment";
+import moment, { Moment } from "moment";
 import styles from "./Day.module.scss";
 
 interface Props {
-  day: moment.Moment | null;
+  day: string | Moment | null;
 }
 
 const Day = ({ day }: Props) => {
@@ -10,7 +10,7 @@ const Day = ({ day }: Props) => {
     return <span className={`${styles.day} ${styles['day--empty']}`}/>;
   }
 
-  return <div className={styles.day}>{day?.date()}</div>;
+  return <div className={styles.day}>{typeof day === 'string' ? day : day?.date()}</div>;
 };
 
 export default Day;
