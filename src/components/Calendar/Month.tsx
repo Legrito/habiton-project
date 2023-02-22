@@ -1,16 +1,20 @@
 import { Moment } from 'moment';
 import Week from "./Week";
+import { getDaysArrayByMonth } from './helpers';
 
 interface Props {
-  monthDays: (Moment | null)[][];
+  monthName: string;
 }
 
-const Month = ({ monthDays }: Props) => (
+const Month = ({ monthName }: Props) => {
+  const monthDays = getDaysArrayByMonth(monthName);
+
+  return (
   <div>
     {monthDays.map((week, idx) => (
       <Week weekDays={week} key={idx} />
     ))}
   </div>
-);
+)};
 
 export default Month;

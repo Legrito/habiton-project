@@ -2,6 +2,11 @@
 
 $border: 3px solid $accent-color;
 
+button {
+  border: none;
+  background-color: transparent;
+}
+
 .chevron {
   display: inline-block;
   width: 20px;

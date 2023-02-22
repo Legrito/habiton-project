@@ -1,21 +1,28 @@
-import moment, { Moment } from "moment";
+import { useState } from "react";
+import moment from "moment";
+import CalendarHeader from './CalendarHeader';
 import Month from "./Month";
 import Weekdays from "./Weekdays";
-import { getDaysArrayByMonth } from './helpers';
-
-const weekDays: number[] = [0, 1, 2, 3, 4, 5, 6];
 
 const Calendar = () => {
-  const currentDate = moment();
-  // var monthName = oneDate.format("MMMM");
-  // const date = moment().month("March");
-  const monthDays = getDaysArrayByMonth(currentDate.format('MMMM'));
+  const [date, setDate] = useState(moment().clone());
+
+  const handleNextMonth = () => {
+    setDate(date.clone().add(1, 'months'));
+  };
+
+  const handlePrevMonth = () => {
+    setDate(date.clone().subtract(1, 'months'));
+  };
 
   return (
-    <div>
-      <Weekdays />
-      <Month monthDays={monthDays} />
-    </div>
+    <>
+      <CalendarHeader next={handleNextMonth} prev={handlePrevMonth} monthName={date.format('MMMM, YY')} />
+      <div>
+        <Weekdays />
+        <Month monthName={date.format('MMMM')} />
+      </div>
+    </>
   );
 };
 
