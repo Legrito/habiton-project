@@ -23,6 +23,15 @@
   }
 }
 
+.today {
+  background-color: $accent-color;
+  color: $white;
+
+  &:hover {
+    color: $dark-gray;
+  }
+}
+
 .day--empty {
   display: inline-block;
   opacity: 0;
