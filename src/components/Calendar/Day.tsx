@@ -11,15 +11,25 @@ const Day = ({ day }: Props) => {
   const dispatch = useAppDispatch();
 
   if (day === null) {
-    return <span className={`${styles.day} ${styles['day--empty']}`}/>;
+    return <span className={`${styles.day} ${styles["day--empty"]}`} />;
   }
-  
+
   const handleClick = (e: any) => {
     e.preventDefault();
 
     dispatch(incremented());
   };
-  return <button type="button" onClick={handleClick} className={`${styles.day} ${day.isSame(new Date(), 'day') ? styles.today : ''}`}>{day.date()}</button>;
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      className={`${styles.day} ${
+        day.isSame(new Date(), "day") ? styles.today : ""
+      }`}
+    >
+      {day.date()}
+    </button>
+  );
 };
 
 export default Day;

@@ -10,9 +10,9 @@ interface Props {
 
 const CalendarHeader = ({ monthName, next, prev }: Props) => (
   <div className={styles.header}>
-    <Chevron position="left" onClick={prev}/>
+    <Chevron position="left" onClick={prev} />
     <h1>{monthName}</h1>
-    <Chevron position="right" onClick={next}/>
+    <Chevron position="right" onClick={next} />
   </div>
 );
 
