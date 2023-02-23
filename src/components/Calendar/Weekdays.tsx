@@ -1,4 +1,4 @@
-import styles from './Weekdays.module.scss';
+import styles from "./Weekdays.module.scss";
 
 const weekdays: string[] = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
