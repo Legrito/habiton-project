@@ -16,11 +16,17 @@ const counterSlice = createSlice({
       // we can "mutate" the state, because immer is under 
       // the hood and it deal with that
       state.value++;
+    },
+    setValue(state, action: PayloadAction<number>) {
+      state.value = action.payload;
     }
+    // amountAdded(state, action: PayloadAction<number>) {
+    //   state.value += action.payload;
+    // },
   }
 });
 
 
-export const { incremented } = counterSlice.actions;
+export const { incremented, setValue } = counterSlice.actions;
 
 export default counterSlice.reducer;
