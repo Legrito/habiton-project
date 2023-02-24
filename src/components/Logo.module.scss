@@ -2,10 +2,6 @@
 
 .logo {
   font-weight: 600;
-  background: $gradient-text;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .size-24 {
@@ -14,4 +10,8 @@
 
 .size-78 {
   font-size: 78px;
+  background: $gradient-text;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

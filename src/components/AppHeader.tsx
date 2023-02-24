@@ -13,9 +13,7 @@ const AppHeader = () => {
   return (
   <div className={styles.header}>
     <Logo />
-    <Link to="/">Home</Link>
-    <Link to="login">Login</Link>
-    <button type="button" onClick={handleSingOut}>Sing Out</button>
+    <button className={styles.button} type="button" onClick={handleSingOut}>Sing Out</button>
   </div>
 )};
 

@@ -1,6 +1,13 @@
 import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { setValue } from "../features/counter/counterSlice";
+import {
+  CircularProgressbarWithChildren
+} from "react-circular-progressbar";
+
+import 'react-circular-progressbar/dist/styles.css';
+
+import "./Counter.scss";
 
 const Counter = () => {
   const dispatch = useAppDispatch();
@@ -21,7 +28,12 @@ const Counter = () => {
 
   return (
     <div>
-      <span>{passedDays}</span>
+      <CircularProgressbarWithChildren
+        value={passedDays}
+        maxValue={21}
+      >
+        <span className="counter-text">{passedDays} days</span>
+      </CircularProgressbarWithChildren>
     </div>
   );
 };

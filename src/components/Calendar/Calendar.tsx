@@ -3,7 +3,6 @@ import moment from "moment";
 import CalendarHeader from "./CalendarHeader";
 import Month from "./Month";
 import Weekdays from "./Weekdays";
-import Counter from "../Counter";
 
 const Calendar = () => {
   const [date, setDate] = useState(moment().clone());
@@ -17,8 +16,7 @@ const Calendar = () => {
   };
 
   return (
-    <>
-      <Counter />
+    <div>
       <CalendarHeader
         next={handleNextMonth}
         prev={handlePrevMonth}
@@ -28,7 +26,7 @@ const Calendar = () => {
         <Weekdays />
         <Month monthName={date.format("MMMM")} />
       </div>
-    </>
+    </div>
   );
 };
 
