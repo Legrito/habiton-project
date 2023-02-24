@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   color: $dark-gray;
+  box-sizing: border-box;
 }
 
 body {
@@ -20,7 +21,7 @@ div {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  width: 360px;
+  width: 800px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 100px;
 }

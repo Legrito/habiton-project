@@ -1,0 +1,19 @@
+@import '../variables.scss';
+
+.counter {
+  width: 400px;
+}
+
+.CircularProgressbar {
+  .CircularProgressbar-trail {
+    stroke: $secondary-color !important;
+  }
+}
+
+.CircularProgressbar-path {
+  stroke: $primary-color !important;
+}
+
+.counter-text {
+  font-size: 60px;
+}
