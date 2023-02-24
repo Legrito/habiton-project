@@ -9,7 +9,6 @@ import "./App.scss";
 const App = () => (
   <AuthProvider authType={"localstorage"} authName={"_auth"}>
     <BrowserRouter>
-      <AppHeader />
       <Routes>
         <Route
           path="/"

@@ -1,0 +1,24 @@
+@import "../variables.scss";
+
+header {
+	box-sizing: border-box;
+  text-align: center;
+	padding: 15px 20px;
+	z-index: 100;
+	position: relative;
+
+	h3 {
+		margin-bottom: 15px;
+	}
+
+	p {
+		margin-bottom: 30px;
+	}
+
+	span {
+		display: inline-block;
+		font-weight: 600;
+		font-size: 28px;
+	}
+
+}
