@@ -1,0 +1,66 @@
+@import "../../variables.scss";
+
+.backdrop {
+  content: "";
+  background-color: $dark-gray;
+  opacity: 40%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.modal {
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  width: 400px;
+  height: 300px;
+  background-color: $secondary-color;
+  position: absolute;
+  z-index: 10000;
+  border-radius: 10px;
+  box-shadow: $shadow;
+  padding: 15px;
+}
+
+.header {
+  height: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  position: relative;
+
+  p {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+}
+
+.button {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+
+  span {
+    font-size: 28px;
+
+    &:first-child {
+      font-size: 38px;
+      margin-bottom: 30px;
+    }
+  }
+}

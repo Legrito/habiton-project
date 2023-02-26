@@ -4,6 +4,7 @@ import AppHeader from "../components/AppHeader";
 import Calendar from "../components/Calendar/Calendar";
 import Counter from "../components/Counter";
 import HabitNameInput from "../components/HabitNameInput";
+import SuccessModal from "../components/SuccessModal/SuccessModal";
 
 import "./Layouts.scss";
 
@@ -25,6 +26,7 @@ const Home = () => {
         <Calendar />
       </div>
     </div>
+    {/* <SuccessModal /> */}
   </>
 )};
 
