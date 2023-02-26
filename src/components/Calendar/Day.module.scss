@@ -1,6 +1,7 @@
 @import "../../variables.scss";
 
 .day {
+  position: relative;
   width: 45px;
   height: 45px;
   border: 1px solid $primary-color;
@@ -37,4 +38,10 @@
   display: inline-block;
   opacity: 0;
   border: none;
+}
+
+.icon {
+  position: absolute;
+  top: 6px;
+  right: -6px;
 }
