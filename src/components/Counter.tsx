@@ -27,12 +27,12 @@ const Counter = () => {
   }, [passedDays]);
 
   return (
-    <div>
+    <div className="habiton-counter-wrap">
       <CircularProgressbarWithChildren
         value={passedDays}
         maxValue={21}
       >
-        <span className="counter-text">{passedDays} days</span>
+        <span className="habiton-counter-text">{passedDays} days</span>
       </CircularProgressbarWithChildren>
     </div>
   );
