@@ -1,18 +1,24 @@
 import { configureStore, Middleware } from "@reduxjs/toolkit";
-import counterReducer from "../features/counter/counterSlice";
+import counterReducer, { setValue } from "../features/counter/counterSlice";
+import modalReducer, { modalToggled } from "../features/modal/modalSlice";
 
-const loggerMiddleware: Middleware = storeAPI => next => action => {
-  console.log('dispatching', action);
-  console.log('next state', storeAPI.getState());
+const habitSuccess: Middleware = store => next => action => {
+  const { counter } = store.getState();
+
+  if(action.type === "counter/incremented" && counter.value >= 20) {
+    store.dispatch(setValue(0));
+    return next(modalToggled());
+  }
   return next(action);
 }
 
 export const store = configureStore({
     reducer: {
-        counter: counterReducer
+        counter: counterReducer,
+        modal: modalReducer
     },
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(loggerMiddleware),
+    getDefaultMiddleware().concat(habitSuccess),
 });
 
 export type AppDispatch = typeof store.dispatch;

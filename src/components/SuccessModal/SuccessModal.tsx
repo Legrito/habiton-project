@@ -1,8 +1,14 @@
+import { useAppDispatch } from "../../app/hooks";
+import { modalToggled } from "../../features/modal/modalSlice";
 import IconCross from "./IconCross";
 import styles from "./SuccessModal.module.scss";
 
 const SuccessModal = () => {
-  const handleClick = () => {};
+  const dispatch = useAppDispatch();
+
+  const handleClick = () => {
+    dispatch(modalToggled());
+  };
   return (
     <>
       <div className={styles.backdrop}></div>

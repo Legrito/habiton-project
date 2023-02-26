@@ -17,7 +17,7 @@ const Day = ({ day }: Props) => {
     return <span className={`${styles.day} ${styles["day--empty"]}`} />;
   }
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     dispatch(incremented());

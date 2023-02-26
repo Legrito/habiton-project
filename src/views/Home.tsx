@@ -10,9 +10,11 @@ import "./Layouts.scss";
 
 const Home = () => {
   const counter = useAppSelector(state => state.counter);
-  useEffect(() => {
-    return () => { console.log(counter)};
-  });
+  const { isOpen } = useAppSelector(state => state.modal);
+
+  // useEffect(() => {
+  //   return () => { console.log(counter)};
+  // });
 
   return (
   <>
@@ -26,7 +28,7 @@ const Home = () => {
         <Calendar />
       </div>
     </div>
-    {/* <SuccessModal /> */}
+    {isOpen && <SuccessModal />}
   </>
 )};
 
