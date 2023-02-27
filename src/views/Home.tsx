@@ -1,4 +1,4 @@
-import { useAppSelector } from "../app/hooks";
+import { useAppSelector } from "../redux/app/hooks";
 import AppHeader from "../components/AppHeader";
 import Calendar from "../components/Calendar/Calendar";
 import Counter from "../components/Counter";

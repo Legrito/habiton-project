@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useAppDispatch } from "../../app/hooks";
-import { modalToggled } from "../../features/modal/modalSlice";
+import { useAppDispatch } from "../../redux/app/hooks";
+import { modalToggled } from "../../redux/features/modal/modalSlice";
 import IconCross from "./IconCross";
 import { HABIT_NAME, HABITONED_DAYS } from "../../constants";
 import styles from "./SuccessModal.module.scss";

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useAppSelector, useAppDispatch } from "../app/hooks";
-import { setValue } from "../features/counter/counterSlice";
+import { useAppSelector, useAppDispatch } from "../redux/app/hooks";
+import { setValue } from "../redux/features/counter/counterSlice";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import { HABITONED_DAYS } from "../constants";
 

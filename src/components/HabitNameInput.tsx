@@ -3,18 +3,8 @@ import { HABIT_NAME } from "../constants";
 import styles from "./LoginForm/LoginForm.module.scss";
 
 const HabitNameInput = () => {
-  const persistedName = localStorage.getItem(HABIT_NAME);
-  const [habit, setHabit] = useState("");
+  const [habit, setHabit] = useState(localStorage.getItem(HABIT_NAME) ?? "");
   const [isEditFinished, setIsEditFinished] = useState(!!habit);
-
-  useEffect(() => {
-    const persistedName = localStorage.getItem(HABIT_NAME);
-    if (persistedName === null) {
-      setHabit("");
-    } else {
-      setHabit(persistedName);
-    }
-  }, [persistedName]);
 
   const handleClick = () => {
     setIsEditFinished(false);

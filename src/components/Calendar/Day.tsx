@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import moment, { Moment } from "moment";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { incremented } from "../../features/counter/counterSlice";
+import { useAppDispatch } from "../../redux/app/hooks";
+import { incremented } from "../../redux/features/counter/counterSlice";
 import Icon from "./Icon";
 import { HABITONED_DAYS } from "../../constants";
 import styles from "./Day.module.scss";
@@ -12,7 +12,6 @@ interface Props {
 
 const Day = ({ day }: Props) => {
   const dispatch = useAppDispatch();
-  const checkedDaysFromStore = useAppSelector(store => store.counter.value);
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
@@ -20,17 +19,12 @@ const Day = ({ day }: Props) => {
 
     if (checkedDays !== null && checkedDays.length > 0 && day !== null) {
       const isCheckedDays = JSON.parse(checkedDays);
+
       if (isCheckedDays.includes(day.format("DD MMMM YYYY"))) {
         setIsChecked(true);
       }
     }
   }, []);
-
-  useEffect(() => {
-    if (checkedDaysFromStore.length === 0) {
-      setIsChecked(false);
-    }
-  }, [checkedDaysFromStore]);
 
   if (day === null) {
     return <span className={`${styles.day} ${styles["day--empty"]}`} />;
