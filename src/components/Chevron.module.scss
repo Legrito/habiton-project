@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 $border: 3px solid $accent-color;
 
@@ -15,7 +15,7 @@ $border: 3px solid $accent-color;
 
   &:hover {
     border-color: $primary-color;
-    transition: all .15s ease-in-out;
+    transition: all 0.15s ease-in-out;
   }
 }
 

@@ -14,7 +14,7 @@ const Counter = () => {
 
   useEffect(() => {
     const counterString = localStorage.getItem(HABITONED_DAYS);
-    
+
     if (counterString !== null) {
       const counter = JSON.parse(counterString);
       dispatch(setValue(counter));

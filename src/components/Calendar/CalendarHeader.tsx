@@ -1,4 +1,3 @@
-import moment from "moment";
 import Chevron from "../Chevron";
 import styles from "./CalendarHeader.module.scss";
 
@@ -10,9 +9,9 @@ interface Props {
 
 const CalendarHeader = ({ monthName, next, prev }: Props) => (
   <div className={styles.header}>
-    <Chevron position="left" onClick={prev} />
+    <Chevron name="previous month" position="left" onClick={prev} />
     <h1>{monthName}</h1>
-    <Chevron position="right" onClick={next} />
+    <Chevron name="next month" position="right" onClick={next} />
   </div>
 );
 
