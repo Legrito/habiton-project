@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSignIn } from "react-auth-kit";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import authOperations from "../../features/auth/authOperations";
 import { validateEmail } from "./helpers";
 import styles from "./LoginForm.module.scss";
 
@@ -11,8 +13,31 @@ const LoginForm = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const signIn = useSignIn();
+  const dispatch = useAppDispatch();
+  const token = useAppSelector(store => store.auth.token)
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleRegister = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const error = validateEmail(email);
+
+    if (error) {
+      return setError(error);
+    } else if (password.length < 3) {
+      return setError("Passport number must be at least 3 characters long");
+    }
+
+    dispatch(authOperations.register({ email, password }));
+    if(token !== null) {
+      signIn({
+        token,
+        expiresIn: 4800,
+        tokenType: "Bearer",
+        authState: { email },
+      });
+    }
+  };
+
+  const handleSingIn = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const jwtToken = "08a5019c-17e1-4977-8f42-65a12843ea02";
     const error = validateEmail(email);
@@ -23,31 +48,7 @@ const LoginForm = () => {
       return setError("Passport number must be at least 3 characters long");
     }
 
-    try {
-      const response = await axios.post(
-        "https://63f872df1dc21d5465bf737e.mockapi.io/auth/login",
-        {
-          email,
-          password,
-          token: jwtToken,
-        }
-      );
-
-      signIn({
-        token: response.data.token,
-        expiresIn: 4800,
-        tokenType: "Bearer",
-        authState: { email },
-      });
-
-      navigate("/");
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        return setError(error.message);
-      } else {
-        return setError("An unexpected error occurred");
-      }
-    }
+    dispatch(authOperations.register({ email, password }));
   };
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value.trim());
@@ -59,7 +60,7 @@ const LoginForm = () => {
     <div className={styles.wrap}>
       <div>
         <h3>Login</h3>
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.form}>
           {error && <p className={styles.error}>{error}</p>}
           <input
             type="email"
@@ -75,9 +76,22 @@ const LoginForm = () => {
             onChange={handlePasswordCange}
             placeholder="Password"
           />
-          <button className={styles.button} type="submit">
-            Login
-          </button>
+          <div>
+            <button
+              className={styles.button}
+              onClick={handleRegister}
+              type="button"
+            >
+              Register
+            </button>
+            <button
+              className={styles.button}
+              onClick={handleSingIn}
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
         </form>
       </div>
     </div>

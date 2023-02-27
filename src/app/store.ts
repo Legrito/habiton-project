@@ -1,6 +1,7 @@
 import { configureStore, Middleware } from "@reduxjs/toolkit";
 import counterReducer, { setValue } from "../features/counter/counterSlice";
 import modalReducer, { modalToggled } from "../features/modal/modalSlice";
+import authReducer from "../features/auth/authSlice";
 import { HABITONED_DAYS, HABIT_NAME } from "../constants";
 
 const habitSuccess: Middleware = store => next => action => {
@@ -16,7 +17,8 @@ const habitSuccess: Middleware = store => next => action => {
 export const store = configureStore({
     reducer: {
         counter: counterReducer,
-        modal: modalReducer
+        modal: modalReducer,
+        auth: authReducer
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(habitSuccess),
