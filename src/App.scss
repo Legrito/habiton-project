@@ -1,6 +1,11 @@
-@import './variables.scss';
+@import "./variables.scss";
 
-*, div, h1, h2, h3, p {
+*,
+div,
+h1,
+h2,
+h3,
+p {
   margin: 0;
   padding: 0;
   color: $dark-gray;
@@ -9,7 +14,7 @@
 
 body {
   box-sizing: border-box;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 div {

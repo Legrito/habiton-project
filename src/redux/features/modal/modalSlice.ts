@@ -5,17 +5,17 @@ interface ModalState {
 }
 
 const initialState: ModalState = {
-  isOpen: false
-}
+  isOpen: false,
+};
 
 const modalSlice = createSlice({
-  name: 'modal',
+  name: "modal",
   initialState,
   reducers: {
     modalToggled(state) {
       state.isOpen = !state.isOpen;
-    }
-  }
+    },
+  },
 });
 
 export const { modalToggled } = modalSlice.actions;
