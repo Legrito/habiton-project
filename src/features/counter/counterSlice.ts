@@ -1,28 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface CounterState {
-  value: number;
+  value: string[];
 }
 
 const initialState: CounterState = {
-  value: 0
+  value: []
 }
 
 const counterSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
-    incremented(state) {
-      // we can "mutate" the state, because immer is under 
-      // the hood and it deal with that
-      state.value++;
+    incremented(state, action: PayloadAction<string>) {
+      state.value.push(action.payload);
     },
-    setValue(state, action: PayloadAction<number>) {
+    setValue(state, action: PayloadAction<string[]>) {
       state.value = action.payload;
     }
-    // amountAdded(state, action: PayloadAction<number>) {
-    //   state.value += action.payload;
-    // },
   }
 });
 
