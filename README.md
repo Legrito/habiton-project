@@ -1,6 +1,6 @@
 <h1>HabitOn 💪</h1>
 <p>https://habiton-project.netlify.app</p>
-<p>Habit creator with a 21-day challenge approach</p>
+<p>Habit creator with a 21-day challenge approach.</p>
 
 <h3>Features:</h3>
 <p>🪪 Login page</p>
@@ -17,7 +17,7 @@
 <p>✔️ React Hooks</p>
 <p>✔️ Redux Toolkit</p>
 <p>✔️ Redux Toolkit Middleware</p>
-<p>✔️ Axios</p>
 <p>✔️ Moment.js</p>
+<p>✔️ Axios</p>
 <p>✔️ React Auth Kit</p>
 
