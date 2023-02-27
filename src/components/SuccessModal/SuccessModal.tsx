@@ -1,12 +1,22 @@
+import { useEffect } from "react";
 import { useAppDispatch } from "../../app/hooks";
 import { modalToggled } from "../../features/modal/modalSlice";
 import IconCross from "./IconCross";
+import { HABIT_NAME, HABITONED_DAYS} from "../../constants";
 import styles from "./SuccessModal.module.scss";
 
 const SuccessModal = () => {
   const dispatch = useAppDispatch();
 
-  const handleClick = () => {
+  useEffect(() => () => {
+    localStorage.removeItem(HABITONED_DAYS);
+    localStorage.removeItem(HABIT_NAME);
+  })
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement> ) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
     dispatch(modalToggled());
   };
   return (

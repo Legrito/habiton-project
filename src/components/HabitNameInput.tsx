@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { HABIT_NAME } from "../constants";
 import styles from "./LoginForm/LoginForm.module.scss";
 
 const HabitNameInput = () => {
-  const [habit, setHabit] = useState(localStorage.getItem("habit_name") || "");
+  const persistedName = localStorage.getItem(HABIT_NAME);
+  const [habit, setHabit] = useState("");
   const [isEditFinished, setIsEditFinished] = useState(!!habit);
+
+  useEffect(() => {
+    const persistedName = localStorage.getItem(HABIT_NAME);
+    if(persistedName === null) {
+      setHabit("");
+    } else {
+      setHabit(persistedName);
+    }
+  }, [persistedName]);
 
 
   const handleClick = () => {
@@ -23,7 +34,7 @@ const HabitNameInput = () => {
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setHabit(evt.target.value);
-    localStorage.setItem("habit_name", evt.target.value)
+    localStorage.setItem(HABIT_NAME, evt.target.value)
   };
 
   const handleBlur = () => {
