@@ -12,7 +12,7 @@ const Week = ({ weekDays }: Props) => {
   return (
     <div className={styles.wrap}>
       {weekDays.map((day, idx) => (
-        <Day key={idx} day={day} />
+        <Day key={day?.format("DD MMMM YYYY") || idx} day={day} />
       ))}
     </div>
   );

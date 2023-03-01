@@ -22,3 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /src/ts_studying
+
+# Local Netlify folder
+.netlify
