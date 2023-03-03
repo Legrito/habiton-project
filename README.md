@@ -20,5 +20,5 @@
 <p>✔️ Moment.js</p>
 <p>✔️ Axios</p>
 <p>✔️ React Auth Kit</p>
-<p>✔️ MOCK API</p>
+<p>✔️ Mock API</p>
 
