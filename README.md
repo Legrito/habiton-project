@@ -1,4 +1,4 @@
-<h1>HabitOn 💪</h1>
+<h1>HabitOn 💪 </h1>
 <p>https://habiton-project.netlify.app</p>
 <p>Habit creator with a 21-day challenge approach.</p>
 
