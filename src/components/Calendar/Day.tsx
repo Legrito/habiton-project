@@ -24,7 +24,7 @@ const Day = ({ day }: Props) => {
         setIsChecked(true);
       }
     }
-  }, []);
+  }, [day]);
 
   if (day === null) {
     return <span className={`${styles.day} ${styles["day--empty"]}`} />;
@@ -48,9 +48,7 @@ const Day = ({ day }: Props) => {
         type="button"
         onClick={handleClick}
         data-aviable={`${moment().isSameOrAfter(day, "day")}`}
-        className={`${styles.day} ${
-          day.isSame(new Date(), "day") ? styles.today : ""
-        }`}
+        className={`${styles.day} ${day.isSame(new Date(), "day") ? styles.today : ""}`}
       >
         {day.date()}
         {isChecked && (
