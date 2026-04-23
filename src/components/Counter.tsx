@@ -1,25 +1,22 @@
 import { useEffect } from "react";
-import { useAppSelector, useAppDispatch } from "../redux/app/hooks";
-import { setValue } from "../redux/features/counter/counterSlice";
-import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import { HABITONED_DAYS } from "../constants";
-
-import "react-circular-progressbar/dist/styles.css";
+import { useAppStore } from "../store/useAppStore";
+import ProgressRing from "./ProgressRing";
 
 import "./Counter.scss";
 
 const Counter = () => {
-  const dispatch = useAppDispatch();
-  const passedDaysArr = useAppSelector(state => state.counter.value);
+  const passedDaysArr = useAppStore(state => state.passedDays);
+  const setPassedDays = useAppStore(state => state.setPassedDays);
 
   useEffect(() => {
     const counterString = localStorage.getItem(HABITONED_DAYS);
 
     if (counterString !== null) {
       const counter = JSON.parse(counterString);
-      dispatch(setValue(counter));
+      setPassedDays(counter);
     }
-  }, []);
+  }, [setPassedDays]);
 
   useEffect(() => {
     if (passedDaysArr.length > 0) {
@@ -29,14 +26,11 @@ const Counter = () => {
 
   return (
     <div className="habiton-counter-wrap">
-      <CircularProgressbarWithChildren
+      <ProgressRing
         value={passedDaysArr.length}
         maxValue={21}
-      >
-        <span className="habiton-counter-text">
-          {passedDaysArr.length} days
-        </span>
-      </CircularProgressbarWithChildren>
+        label={`${passedDaysArr.length} days`}
+      />
     </div>
   );
 };

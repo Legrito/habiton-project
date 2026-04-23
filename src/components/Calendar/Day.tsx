@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import moment, { Moment } from "moment";
-import { useAppDispatch } from "../../redux/app/hooks";
-import { incremented } from "../../redux/features/counter/counterSlice";
 import Icon from "./Icon";
 import { HABITONED_DAYS } from "../../constants";
+import { useAppStore } from "../../store/useAppStore";
 import styles from "./Day.module.scss";
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
 }
 
 const Day = ({ day }: Props) => {
-  const dispatch = useAppDispatch();
+  const addPassedDay = useAppStore(state => state.addPassedDay);
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
@@ -37,7 +36,7 @@ const Day = ({ day }: Props) => {
     if (e.currentTarget.dataset.aviable === "false") {
       return null;
     } else {
-      dispatch(incremented(stringDay));
+      addPassedDay(stringDay);
       setIsChecked(prev => !prev);
     }
   };

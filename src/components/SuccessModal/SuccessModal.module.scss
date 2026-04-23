@@ -1,8 +1,8 @@
-@import "../../variables.scss";
+@use "../../variables.scss" as vars;
 
 .backdrop {
   content: "";
-  background-color: $dark-gray;
+  background-color: vars.$dark-gray;
   opacity: 40%;
   position: absolute;
   top: 0;
@@ -17,11 +17,11 @@
   left: calc(50% - 200px);
   width: 400px;
   height: 300px;
-  background-color: $secondary-color;
+  background-color: vars.$secondary-color;
   position: absolute;
   z-index: 10000;
   border-radius: 10px;
-  box-shadow: $shadow;
+  box-shadow: vars.$shadow;
   padding: 15px;
 }
 

@@ -1,24 +1,32 @@
-<h1>HabitOn 💪 </h1>
-<p>https://habiton-project.netlify.app</p>
-<p>Habit creator with a 21-day challenge approach.</p>
+# HabitOn
 
-<h3>Features:</h3>
-<p>🪪 Login page</p>
-<p>🔐 Private route</p>
-<p>📅 Calendar</p>
-<p>📊 Progress diagram</p>
-<p>📝 Editable habit name</p>
-<p>📥 Data persista after page refresh</p>
-<p>🎀 Custom design</p>
+https://habiton-project.netlify.app
 
-<h3>Utilised Technologies:</h3>
-<p>✔️ TypeScript</p>
-<p>✔️ React Router 6</p>
-<p>✔️ React Hooks</p>
-<p>✔️ Redux Toolkit</p>
-<p>✔️ Redux Toolkit Middleware</p>
-<p>✔️ Moment.js</p>
-<p>✔️ Axios</p>
-<p>✔️ React Auth Kit</p>
-<p>✔️ Mock API</p>
+Habit tracker built around a 21-day challenge flow.
 
+## Scripts
+
+- `npm start` or `npm run dev` to run the Vite dev server
+- `npm run build` to create a production build
+- `npm run preview` to preview the production build locally
+
+## Features
+
+- Login page
+- Private route
+- Calendar-based daily tracking
+- Local SVG progress ring
+- Editable habit name
+- Data persistence after page refresh
+- Custom design
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- React Router 6
+- Zustand
+- Moment.js
+- Axios
+- React Auth Kit
+- SCSS

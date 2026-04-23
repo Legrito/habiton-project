@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { useAppDispatch } from "../../redux/app/hooks";
-import { modalToggled } from "../../redux/features/modal/modalSlice";
 import IconCross from "./IconCross";
 import { HABIT_NAME, HABITONED_DAYS } from "../../constants";
+import { useAppStore } from "../../store/useAppStore";
 import styles from "./SuccessModal.module.scss";
 
 const SuccessModal = () => {
-  const dispatch = useAppDispatch();
+  const toggleModal = useAppStore(state => state.toggleModal);
 
   useEffect(() => () => {
     localStorage.removeItem(HABITONED_DAYS);
@@ -17,7 +16,7 @@ const SuccessModal = () => {
     e.preventDefault();
     e.stopPropagation();
 
-    dispatch(modalToggled());
+    toggleModal();
   };
   return (
     <>
