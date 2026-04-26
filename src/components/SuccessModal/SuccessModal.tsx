@@ -10,7 +10,7 @@ const SuccessModal = () => {
   useEffect(() => () => {
     localStorage.removeItem(HABITONED_DAYS);
     localStorage.removeItem(HABIT_NAME);
-  });
+  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
