@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@use "../variables.scss" as vars;
 
 .logo {
   font-weight: 600;
@@ -10,7 +10,7 @@
 
 .size-78 {
   font-size: 78px;
-  background: $gradient-text;
+  background: vars.$gradient-text;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -1,4 +1,12 @@
-@import "./variables.scss";
+@use "./variables.scss" as vars;
+
+:root {
+  --primary-color: #{vars.$primary-color};
+  --secondary-color: #{vars.$secondary-color};
+  --accent-color: #{vars.$accent-color};
+  --dark-gray: #{vars.$dark-gray};
+  --white: #{vars.$white};
+}
 
 *,
 div,
@@ -8,7 +16,7 @@ h3,
 p {
   margin: 0;
   padding: 0;
-  color: $dark-gray;
+  color: vars.$dark-gray;
   box-sizing: border-box;
 }
 

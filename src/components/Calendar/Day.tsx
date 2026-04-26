@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
 import moment, { Moment } from "moment";
-import { useAppDispatch } from "../../redux/app/hooks";
-import { incremented } from "../../redux/features/counter/counterSlice";
 import Icon from "./Icon";
-import { HABITONED_DAYS } from "../../constants";
+import { useAppStore } from "../../store/useAppStore";
 import styles from "./Day.module.scss";
 
 interface Props {
@@ -11,34 +8,23 @@ interface Props {
 }
 
 const Day = ({ day }: Props) => {
-  const dispatch = useAppDispatch();
-  const [isChecked, setIsChecked] = useState(false);
-
-  useEffect(() => {
-    const checkedDays = localStorage.getItem(HABITONED_DAYS);
-
-    if (checkedDays !== null && checkedDays.length > 0 && day !== null) {
-      const isCheckedDays = JSON.parse(checkedDays);
-
-      if (isCheckedDays.includes(day.format("DD MMMM YYYY"))) {
-        setIsChecked(true);
-      }
-    }
-  }, []);
+  const addPassedDay = useAppStore(state => state.addPassedDay);
 
   if (day === null) {
     return <span className={`${styles.day} ${styles["day--empty"]}`} />;
   }
 
+  const stringDay = day.format("DD MMMM YYYY");
+  const passedDays = useAppStore(state => state.passedDays);
+  const isChecked = passedDays.includes(stringDay);
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const stringDay = day.format("DD MMMM YYYY");
 
     if (e.currentTarget.dataset.aviable === "false") {
       return null;
     } else {
-      dispatch(incremented(stringDay));
-      setIsChecked(prev => !prev);
+      addPassedDay(stringDay);
     }
   };
   return (

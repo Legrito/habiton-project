@@ -1,10 +1,10 @@
-@import "../../variables.scss";
+@use "../../variables.scss" as vars;
 
 .day {
   position: relative;
   width: 45px;
   height: 45px;
-  border: 1px solid $primary-color;
+  border: 1px solid vars.$primary-color;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@
 
   &:not(.day--empty) {
     &:hover {
-      background-color: $secondary-color;
+      background-color: vars.$secondary-color;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
     }
@@ -26,11 +26,11 @@
 }
 
 .today {
-  background-color: $accent-color;
-  color: $white;
+  background-color: vars.$accent-color;
+  color: vars.$white;
 
   &:hover {
-    color: $dark-gray;
+    color: vars.$dark-gray;
   }
 }
 
