@@ -6,7 +6,7 @@
     "axios": "^1.11.0",
     "moment": "^2.29.4",
     "react": "^19.2.0",
-    "react-auth-kit": "^2.7.1",
+    "react-auth-kit": "^4.0.2-alpha.11",
     "react-dom": "^19.2.0",
     "react-router-dom": "^6.8.1",
     "zustand": "^5.0.8"

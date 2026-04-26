@@ -3,5 +3,7 @@ $secondary-color: #9fe6a0;
 $accent-color: #f55c47;
 $dark-gray: #564a4a;
 $white: #f1ebe6;
-$gradient-text: linear-gradient(89.97deg, #4aa96c 1.84%, #9fe6a0 102.67%);
+$gradient-text: linear-gradient(89.97deg,
+    $primary-color 1.84%,
+    $secondary-color 102.67%);
 $shadow: 8px 8px 24px -18px #42445a;
